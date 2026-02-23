@@ -1,0 +1,26 @@
+# Environment variables
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+*.db
+
+# Node / Frontend
+node_modules/
+dist/
+.cache/
+
+# Build prompt (not needed in repo)
+Mohammad_Portfolio_Build_Prompt (1).md
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
