@@ -38,8 +38,8 @@ async def get_chat_response(messages: list[dict]) -> str:
                     json={
                         "model": model,
                         "messages": messages,
-                        "max_tokens": 500,
-                        "temperature": 0.7
+                        "max_tokens": 300,
+                        "temperature": 0.5
                     },
                     timeout=30.0
                 )
