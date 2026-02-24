@@ -9,10 +9,7 @@ BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Multiple free models — tried in order until one succeeds
 MODELS = [
-    "deepseek/deepseek-r1:free",
     "meta-llama/llama-3-8b-instruct:free",
-    "meta-llama/llama-3.3-70b-instruct:free",
-    "google/gemini-2.0-pro-exp-02-05:free",
 ]
 
 async def get_chat_response(messages: list[dict]) -> str:
