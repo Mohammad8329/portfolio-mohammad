@@ -17,7 +17,8 @@ else:
     allowed_origins = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://mohammad-portfolio.pages.dev"
+        #"https://mohammad-portfolio.pages.dev",
+        "https://portfolio-mohammad-five.vercel.app"
     ]
 
 app.add_middleware(
