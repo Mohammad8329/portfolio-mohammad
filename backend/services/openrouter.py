@@ -8,8 +8,14 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Multiple free models — tried in order until one succeeds
+# openrouter/auto-free automatically picks the best available free model
 MODELS = [
-    "meta-llama/llama-3-8b-instruct:free",
+    "openrouter/auto-free",                              # Auto-routes to any available free model
+    "stepfun/step-3.5-flash:free",                       # Fast, 256K context
+    "google/gemma-3-12b-it:free",                        # Google, reliable
+    "qwen/qwen3-4b:free",                                # Light and fast
+    "meta-llama/llama-3.2-3b-instruct:free",             # Llama, 131K context
+    "nousresearch/hermes-3-llama-3.1-405b:free",         # Large, high quality
 ]
 
 async def get_chat_response(messages: list[dict]) -> str:
