@@ -49,7 +49,7 @@ export function Navigation() {
               className="px-4 py-2"
               style={{
                 fontFamily: 'Press Start 2P, monospace',
-                fontSize: '14px',
+                fontSize: '20px',
                 color: '#FFD700',
                 backgroundColor: '#0D0221',
                 border: '3px solid #FFD700',
@@ -65,14 +65,14 @@ export function Navigation() {
             <span
               style={{
                 fontFamily: 'Press Start 2P, monospace',
-                fontSize: '10px',
+                fontSize: '20px',
                 color: '#FF006E',
               }}
             >
               LIVES:
             </span>
             {[...Array(lives)].map((_, i) => (
-              <span key={i} style={{ color: '#FF006E', fontSize: '16px' }}>♥</span>
+              <span key={i} style={{ color: '#FF006E', fontSize: '20px' }}>♥</span>
             ))}
           </div>
 
@@ -85,7 +85,7 @@ export function Navigation() {
                 className="font-medium transition-all duration-300 px-3 py-1"
                 style={{
                   fontFamily: 'Press Start 2P, monospace',
-                  fontSize: '10px',
+                  fontSize: '20px',
                   color: '#FFFFFF',
                 }}
                 whileHover={{
@@ -104,7 +104,7 @@ export function Navigation() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2"
-            style={{ 
+            style={{
               color: '#FFD700',
               border: '2px solid #FFD700',
               backgroundColor: '#0D0221',
@@ -121,7 +121,7 @@ export function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-4 pt-4"
-            style={{ 
+            style={{
               borderTop: '2px solid #FFD700',
             }}
           >
@@ -134,7 +134,7 @@ export function Navigation() {
                   className="font-medium transition-colors duration-300 hover:text-[#FFD700] px-3 py-2"
                   style={{
                     fontFamily: 'Press Start 2P, monospace',
-                    fontSize: '10px',
+                    fontSize: '20px',
                     color: '#FFFFFF',
                     border: '2px solid #00F0FF',
                     backgroundColor: '#0D0221',

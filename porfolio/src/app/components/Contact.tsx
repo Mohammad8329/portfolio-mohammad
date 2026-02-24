@@ -3,6 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
 import { Send, CheckCircle, Mail, Linkedin, Github, Zap } from 'lucide-react';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const EMAIL_URL = import.meta.env.VITE_EMAIL_URL || 'mailto:shaikhmohummad86@gmail.com';
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || 'https://www.linkedin.com/in/mohammad-shaikh-692a36213/';
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || 'https://github.com/Mohammad8329/portfolio-mohammad';
 
 export function Contact() {
   const { ref, inView } = useInView({
@@ -111,7 +114,7 @@ export function Contact() {
             <p
               style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '24px',
+                fontSize: '28px',
                 color: '#A8A8C0',
               }}
             >
@@ -136,7 +139,7 @@ export function Contact() {
                     className="text-lg"
                     style={{
                       fontFamily: 'Press Start 2P, monospace',
-                      fontSize: '12px',
+                      fontSize: '25px',
                       color: '#00F0FF',
                     }}
                   >
@@ -150,7 +153,7 @@ export function Contact() {
                       className="block text-sm mb-2"
                       style={{
                         fontFamily: 'Press Start 2P, monospace',
-                        fontSize: '8px',
+                        fontSize: '12px',
                         color: '#FFD700',
                       }}
                     >
@@ -164,7 +167,7 @@ export function Contact() {
                       className="w-full px-4 py-3 border outline-none focus:border-[#FFD700] transition-colors"
                       style={{
                         fontFamily: 'VT323, monospace',
-                        fontSize: '20px',
+                        fontSize: '24px',
                         backgroundColor: '#0D0221',
                         borderColor: '#FFD700',
                         borderWidth: '2px',
@@ -179,7 +182,7 @@ export function Contact() {
                       className="block text-sm mb-2"
                       style={{
                         fontFamily: 'Press Start 2P, monospace',
-                        fontSize: '8px',
+                        fontSize: '12px',
                         color: '#FFD700',
                       }}
                     >
@@ -193,7 +196,7 @@ export function Contact() {
                       className="w-full px-4 py-3 border outline-none focus:border-[#FFD700] transition-colors"
                       style={{
                         fontFamily: 'VT323, monospace',
-                        fontSize: '20px',
+                        fontSize: '24px',
                         backgroundColor: '#0D0221',
                         borderColor: '#FFD700',
                         borderWidth: '2px',
@@ -208,7 +211,7 @@ export function Contact() {
                       className="block text-sm mb-2"
                       style={{
                         fontFamily: 'Press Start 2P, monospace',
-                        fontSize: '8px',
+                        fontSize: '12px',
                         color: '#FFD700',
                       }}
                     >
@@ -222,7 +225,7 @@ export function Contact() {
                       className="w-full px-4 py-3 border outline-none focus:border-[#FFD700] transition-colors resize-none"
                       style={{
                         fontFamily: 'VT323, monospace',
-                        fontSize: '20px',
+                        fontSize: '24px',
                         backgroundColor: '#0D0221',
                         borderColor: '#FFD700',
                         borderWidth: '2px',
@@ -240,7 +243,7 @@ export function Contact() {
                         color: '#FF006E',
                         border: '2px solid #FF006E',
                         fontFamily: 'VT323, monospace',
-                        fontSize: '18px',
+                        fontSize: '22px',
                       }}
                     >
                       ERROR: {error}
@@ -255,7 +258,7 @@ export function Contact() {
                         color: '#00F0FF',
                         border: '2px solid #00F0FF',
                         fontFamily: 'Press Start 2P, monospace',
-                        fontSize: '8px',
+                        fontSize: '12px',
                       }}
                     >
                       <CheckCircle className="w-4 h-4" />
@@ -269,7 +272,7 @@ export function Contact() {
                     className="w-full px-6 py-4 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     style={{
                       fontFamily: 'Press Start 2P, monospace',
-                      fontSize: '12px',
+                      fontSize: '16px',
                       backgroundColor: '#FFD700',
                       color: '#0D0221',
                       border: '4px solid #FFD700',
@@ -308,7 +311,7 @@ export function Contact() {
                   className="text-lg mb-6"
                   style={{
                     fontFamily: 'Press Start 2P, monospace',
-                    fontSize: '12px',
+                    fontSize: '25px',
                     color: '#FF006E',
                   }}
                 >
@@ -317,7 +320,7 @@ export function Contact() {
 
                 <div className="space-y-3">
                   <a
-                    href="mailto:mohammad.shaikh@example.com"
+                    href={EMAIL_URL}
                     className="flex items-center gap-3 p-3 transition-all duration-300"
                     style={{
                       backgroundColor: '#0D0221',
@@ -330,27 +333,27 @@ export function Contact() {
                         className="text-sm font-medium"
                         style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '16px',
                           color: '#FFD700',
                         }}
                       >
                         EMAIL
                       </p>
                       <p
-                        className="text-xs"
+                        className="text-xs break-all"
                         style={{
                           fontFamily: 'VT323, monospace',
-                          fontSize: '16px',
+                          fontSize: '20px',
                           color: '#A8A8C0',
                         }}
                       >
-                        MOHAMMAD.SHAIKH@EXAMPLE.COM
+                        SHAIKHMOHUMMAD86@GMAIL.COM
                       </p>
                     </div>
                   </a>
 
                   <a
-                    href="https://linkedin.com"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 transition-all duration-300"
@@ -365,7 +368,7 @@ export function Contact() {
                         className="text-sm font-medium"
                         style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '16px',
                           color: '#00F0FF',
                         }}
                       >
@@ -375,7 +378,7 @@ export function Contact() {
                         className="text-xs"
                         style={{
                           fontFamily: 'VT323, monospace',
-                          fontSize: '16px',
+                          fontSize: '20px',
                           color: '#A8A8C0',
                         }}
                       >
@@ -385,7 +388,7 @@ export function Contact() {
                   </a>
 
                   <a
-                    href="https://github.com"
+                    href={GITHUB_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 transition-all duration-300"
@@ -400,7 +403,7 @@ export function Contact() {
                         className="text-sm font-medium"
                         style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '16px',
                           color: '#FF8800',
                         }}
                       >
@@ -410,7 +413,7 @@ export function Contact() {
                         className="text-xs"
                         style={{
                           fontFamily: 'VT323, monospace',
-                          fontSize: '16px',
+                          fontSize: '20px',
                           color: '#A8A8C0',
                         }}
                       >
@@ -432,14 +435,14 @@ export function Contact() {
                   className="text-sm leading-relaxed"
                   style={{
                     fontFamily: 'VT323, monospace',
-                    fontSize: '20px',
+                    fontSize: '24px',
                     color: '#FFFFFF',
                   }}
                 >
                   <span style={{
                     color: '#FF8800',
                     fontFamily: 'Press Start 2P, monospace',
-                    fontSize: '10px',
+                    fontSize: '25px',
                   }}>
                     QUEST AVAILABLE:
                   </span>

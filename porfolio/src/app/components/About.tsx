@@ -26,7 +26,7 @@ export function About() {
   return (
     <section id="about" className="py-20 px-6 relative" style={{ backgroundColor: '#0D0221' }}>
       {/* Retro Grid Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `
@@ -46,7 +46,7 @@ export function About() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="mb-12 text-center">
-            <div 
+            <div
               className="inline-block px-8 py-4 mb-6"
               style={{
                 backgroundColor: '#1A0B2E',
@@ -54,9 +54,9 @@ export function About() {
                 boxShadow: '0 0 20px rgba(255, 0, 110, 0.5)',
               }}
             >
-              <h2 
+              <h2
                 className="text-3xl md:text-4xl retro-text-shadow"
-                style={{ 
+                style={{
                   fontFamily: 'Press Start 2P, monospace',
                   color: '#FF006E',
                   lineHeight: '1.6',
@@ -68,7 +68,7 @@ export function About() {
             <p
               style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '24px',
+                fontSize: '28px',
                 color: '#A8A8C0',
               }}
             >
@@ -80,7 +80,7 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Left Column - Bio */}
             <motion.div variants={itemVariants}>
-              <div 
+              <div
                 className="p-6 h-full"
                 style={{
                   backgroundColor: '#1A0B2E',
@@ -96,42 +96,42 @@ export function About() {
                       animation: 'blink 1s infinite',
                     }}
                   />
-                  <h3 
+                  <h3
                     className="text-lg"
-                    style={{ 
+                    style={{
                       fontFamily: 'Press Start 2P, monospace',
-                      fontSize: '12px',
+                      fontSize: '25px',
                       color: '#FFD700',
                     }}
                   >
                     PROFILE
                   </h3>
                 </div>
-                <p 
+                <p
                   className="leading-relaxed mb-4"
-                  style={{ 
+                  style={{
                     fontFamily: 'VT323, monospace',
-                    fontSize: '22px',
+                    fontSize: '26px',
                     color: '#FFFFFF',
                   }}
                 >
-                  I'M <strong style={{ color: '#FFD700' }}>MOHAMMAD NUMAN SHAIKH</strong>, AN MCA STUDENT 
+                  I'M <strong style={{ color: '#FFD700' }}>MOHAMMAD NUMAN SHAIKH</strong>, AN MCA STUDENT
                   MASTERING THE ART OF BACKEND DEVELOPMENT, AI INTEGRATION, AND WORKFLOW AUTOMATION.
                 </p>
-                <p 
+                <p
                   className="leading-relaxed"
-                  style={{ 
+                  style={{
                     fontFamily: 'VT323, monospace',
-                    fontSize: '20px',
+                    fontSize: '24px',
                     color: '#A8A8C0',
                   }}
                 >
-                  MY GAMEPLAY: COMBINING ROBUST BACKEND ARCHITECTURE WITH CUTTING-EDGE AI 
+                  MY GAMEPLAY: COMBINING ROBUST BACKEND ARCHITECTURE WITH CUTTING-EDGE AI
                   TO CREATE SYSTEMS THAT ARE INTELLIGENT, FUNCTIONAL, AND SCALABLE.
                 </p>
-                
+
                 {/* Player Stats */}
-                <div 
+                <div
                   className="mt-6 p-4"
                   style={{
                     backgroundColor: '#0D0221',
@@ -140,34 +140,34 @@ export function About() {
                 >
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '8px', color: '#A8A8C0' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#A8A8C0' }}>
                         CODING
                       </p>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#FFD700' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '16px', color: '#FFD700' }}>
                         LV. 90
                       </p>
                     </div>
                     <div>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '8px', color: '#A8A8C0' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#A8A8C0' }}>
                         AI MAGIC
                       </p>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#00F0FF' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '16px', color: '#00F0FF' }}>
                         LV. 85
                       </p>
                     </div>
                     <div>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '8px', color: '#A8A8C0' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#A8A8C0' }}>
                         AUTOMATION
                       </p>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#FF006E' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '16px', color: '#FF006E' }}>
                         LV. 95
                       </p>
                     </div>
                     <div>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '8px', color: '#A8A8C0' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#A8A8C0' }}>
                         TEAMWORK
                       </p>
-                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '12px', color: '#FF8800' }}>
+                      <p style={{ fontFamily: 'Press Start 2P, monospace', fontSize: '16px', color: '#FF8800' }}>
                         LV. 88
                       </p>
                     </div>
@@ -178,7 +178,7 @@ export function About() {
 
             {/* Right Column - Education */}
             <motion.div variants={itemVariants}>
-              <div 
+              <div
                 className="p-6 h-full"
                 style={{
                   backgroundColor: '#1A0B2E',
@@ -188,11 +188,11 @@ export function About() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <Trophy className="w-5 h-5" style={{ color: '#00F0FF' }} />
-                  <h3 
+                  <h3
                     className="text-lg"
-                    style={{ 
+                    style={{
                       fontFamily: 'Press Start 2P, monospace',
-                      fontSize: '12px',
+                      fontSize: '25px',
                       color: '#00F0FF',
                     }}
                   >
@@ -201,7 +201,7 @@ export function About() {
                 </div>
 
                 {/* MCA */}
-                <div 
+                <div
                   className="mb-4 p-4"
                   style={{
                     backgroundColor: '#0D0221',
@@ -211,10 +211,10 @@ export function About() {
                   <div className="flex items-start gap-3 mb-2">
                     <GraduationCap className="w-5 h-5 flex-shrink-0" style={{ color: '#00F0FF' }} />
                     <div className="flex-1">
-                      <p 
-                        style={{ 
+                      <p
+                        style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '10px',
+                          fontSize: '14px',
                           color: '#00F0FF',
                           lineHeight: '1.6',
                           marginBottom: '8px',
@@ -222,28 +222,28 @@ export function About() {
                       >
                         MCA DEGREE
                       </p>
-                      <p 
+                      <p
                         className="text-sm mt-1"
-                        style={{ 
-                          color: '#FFFFFF', 
+                        style={{
+                          color: '#FFFFFF',
                           fontFamily: 'VT323, monospace',
-                          fontSize: '18px',
+                          fontSize: '22px',
                         }}
                       >
                         BHARATI VIDYAPEETH UNIVERSITY, PUNE
                       </p>
                       <div className="flex gap-4 mt-2">
-                        <span style={{ 
-                          color: '#FFD700', 
+                        <span style={{
+                          color: '#FFD700',
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '12px',
                         }}>
                           CGPA: 8.67
                         </span>
-                        <span style={{ 
-                          color: '#A8A8C0', 
+                        <span style={{
+                          color: '#A8A8C0',
                           fontFamily: 'VT323, monospace',
-                          fontSize: '16px',
+                          fontSize: '20px',
                         }}>
                           2024-2026
                         </span>
@@ -253,7 +253,7 @@ export function About() {
                 </div>
 
                 {/* BCA */}
-                <div 
+                <div
                   className="p-4"
                   style={{
                     backgroundColor: '#0D0221',
@@ -263,10 +263,10 @@ export function About() {
                   <div className="flex items-start gap-3 mb-2">
                     <Code2 className="w-5 h-5 flex-shrink-0" style={{ color: '#FF006E' }} />
                     <div className="flex-1">
-                      <p 
-                        style={{ 
+                      <p
+                        style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '10px',
+                          fontSize: '14px',
                           color: '#FF006E',
                           lineHeight: '1.6',
                           marginBottom: '8px',
@@ -274,28 +274,28 @@ export function About() {
                       >
                         BCA DEGREE
                       </p>
-                      <p 
+                      <p
                         className="text-sm mt-1"
-                        style={{ 
-                          color: '#FFFFFF', 
+                        style={{
+                          color: '#FFFFFF',
                           fontFamily: 'VT323, monospace',
-                          fontSize: '18px',
+                          fontSize: '22px',
                         }}
                       >
                         SAVITRIBAI PHULE PUNE UNIVERSITY
                       </p>
                       <div className="flex gap-4 mt-2">
-                        <span style={{ 
-                          color: '#FFD700', 
+                        <span style={{
+                          color: '#FFD700',
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '12px',
                         }}>
                           CGPA: 7.36
                         </span>
-                        <span style={{ 
-                          color: '#A8A8C0', 
+                        <span style={{
+                          color: '#A8A8C0',
                           fontFamily: 'VT323, monospace',
-                          fontSize: '16px',
+                          fontSize: '20px',
                         }}>
                           2019-2022
                         </span>
@@ -309,7 +309,7 @@ export function About() {
 
           {/* Interests */}
           <motion.div variants={itemVariants} className="mt-6">
-            <div 
+            <div
               className="p-6"
               style={{
                 backgroundColor: '#1A0B2E',
@@ -319,11 +319,11 @@ export function About() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Brain className="w-6 h-6" style={{ color: '#FF8800' }} />
-                <h3 
+                <h3
                   className="text-lg"
-                  style={{ 
+                  style={{
                     fontFamily: 'Press Start 2P, monospace',
-                    fontSize: '12px',
+                    fontSize: '25px',
                     color: '#FF8800',
                   }}
                 >
@@ -344,7 +344,7 @@ export function About() {
                     className="px-4 py-2"
                     style={{
                       fontFamily: 'Press Start 2P, monospace',
-                      fontSize: '8px',
+                      fontSize: '16px',
                       backgroundColor: '#0D0221',
                       color: interest.color,
                       border: `2px solid ${interest.color}`,

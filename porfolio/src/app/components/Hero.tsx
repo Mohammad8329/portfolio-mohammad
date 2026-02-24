@@ -11,7 +11,6 @@ export function Hero() {
   });
 
   const [showCursor, setShowCursor] = useState(true);
-  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,19 +19,12 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const scoreInterval = setInterval(() => {
-      setScore(prev => (prev + 100) % 999900);
-    }, 100);
-    return () => clearInterval(scoreInterval);
-  }, []);
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Retro Arcade Background */}
       <div className="absolute inset-0 z-0">
         {/* Pixel Grid */}
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
@@ -42,7 +34,7 @@ export function Hero() {
             backgroundSize: '20px 20px',
           }}
         />
-        
+
         {/* Animated Stars */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
@@ -68,7 +60,7 @@ export function Hero() {
         </div>
 
         {/* Retro Gradient Orbs */}
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             background: `
@@ -80,29 +72,14 @@ export function Hero() {
         />
       </div>
 
-      {/* Score Display - Top Right Corner */}
-      <div 
-        className="absolute top-8 right-8 z-20 px-6 py-3"
-        style={{
-          fontFamily: 'Press Start 2P, monospace',
-          fontSize: '12px',
-          color: '#FFD700',
-          backgroundColor: '#1A0B2E',
-          border: '4px solid #FFD700',
-          boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)',
-        }}
-      >
-        SCORE: {score.toString().padStart(6, '0')}
-      </div>
-
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
         >
-          <div 
+          <div
             className="inline-block px-8 py-4 mb-8"
             style={{
               backgroundColor: '#1A0B2E',
@@ -110,17 +87,15 @@ export function Hero() {
               boxShadow: '0 0 20px rgba(255, 215, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.1)',
             }}
           >
-            <h1 
-              className="text-3xl md:text-4xl lg:text-5xl mb-0 retro-text-shadow"
-              style={{ 
+            <h1
+              className="text-3xl md:text-4xl lg:text-5xl mb-0 retro-text-shadow whitespace-nowrap"
+              style={{
                 fontFamily: 'Press Start 2P, monospace',
                 color: '#FFD700',
                 lineHeight: '1.6',
               }}
             >
-              MOHAMMAD
-              <br />
-              N. SHAIKH
+              MOHAMMAD N. SHAIKH
             </h1>
           </div>
         </motion.div>
@@ -138,18 +113,18 @@ export function Hero() {
               border: '3px solid #00F0FF',
             }}
           >
-            <p 
+            <p
               className="text-xl md:text-2xl lg:text-3xl"
-              style={{ 
+              style={{
                 fontFamily: 'Press Start 2P, monospace',
                 color: '#00F0FF',
-                fontSize: '16px',
+                fontSize: '20px',
                 lineHeight: '1.8',
               }}
             >
               {'> '}{typedText}
-              <span 
-                style={{ 
+              <span
+                style={{
                   opacity: showCursor ? 1 : 0,
                   color: '#FFD700'
                 }}
@@ -165,12 +140,12 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <p 
+          <p
             className="text-base md:text-lg mb-8 max-w-2xl mx-auto"
-            style={{ 
+            style={{
               fontFamily: 'VT323, monospace',
               color: '#A8A8C0',
-              fontSize: '24px',
+              fontSize: '28px',
               lineHeight: '1.4',
             }}
           >
@@ -184,41 +159,48 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex flex-wrap gap-6 justify-center"
+          className="flex flex-col md:flex-row gap-6 justify-center items-center"
         >
           <motion.a
             href="#projects"
-            className="px-8 py-4 font-medium transition-all duration-300"
+            className="px-6 py-4 font-medium"
             style={{
               fontFamily: 'Press Start 2P, monospace',
-              fontSize: '12px',
-              backgroundColor: '#FFD700',
-              color: '#0D0221',
+              fontSize: '24px',
+              backgroundColor: '#1A0B2E',
+              color: '#FFD700',
               border: '4px solid #FFD700',
-              boxShadow: '6px 6px 0px #FF006E',
+              textShadow: '2px 2px 0px #FF006E',
+              boxShadow: '0 0 20px rgba(255, 215, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.1)',
+              imageRendering: 'pixelated',
             }}
-            whileHover={{ 
+            whileHover={{
+              color: '#FFFFFF',
               scale: 1.05,
-              boxShadow: '8px 8px 0px #FF006E',
+              boxShadow: '0 0 30px rgba(255, 215, 0, 0.8), inset 0 0 30px rgba(255, 215, 0, 0.2)',
             }}
             whileTap={{ scale: 0.95 }}
           >
             START GAME
           </motion.a>
+
           <motion.a
             href="#contact"
-            className="px-8 py-4 font-medium transition-all duration-300"
+            className="px-6 py-4 font-medium"
             style={{
               fontFamily: 'Press Start 2P, monospace',
-              fontSize: '12px',
-              border: '4px solid #00F0FF',
+              fontSize: '24px',
+              backgroundColor: '#1A0B2E',
               color: '#00F0FF',
-              backgroundColor: '#0D0221',
-              boxShadow: '6px 6px 0px #FF8800',
+              border: '4px solid #00F0FF',
+              textShadow: '2px 2px 0px #0D0221',
+              boxShadow: '0 0 20px rgba(0, 240, 255, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.1)',
+              imageRendering: 'pixelated',
             }}
-            whileHover={{ 
+            whileHover={{
+              color: '#FFFFFF',
               scale: 1.05,
-              boxShadow: '8px 8px 0px #FF8800',
+              boxShadow: '0 0 30px rgba(0, 240, 255, 0.8), inset 0 0 30px rgba(0, 240, 255, 0.2)',
             }}
             whileTap={{ scale: 0.95 }}
           >
@@ -231,12 +213,23 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-12"
+          className="mt-12 flex items-center justify-center gap-4"
         >
+          <motion.span
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+            style={{
+              fontFamily: 'Press Start 2P, monospace',
+              fontSize: '25px',
+              color: '#00F0FF',
+            }}
+          >
+            ▶
+          </motion.span>
           <p
             style={{
               fontFamily: 'Press Start 2P, monospace',
-              fontSize: '10px',
+              fontSize: '25px',
               color: '#FF006E',
             }}
           >
@@ -245,25 +238,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Retro Style */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          style={{
-            fontFamily: 'Press Start 2P, monospace',
-            fontSize: '20px',
-            color: '#FFD700',
-          }}
-        >
-          ▼
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

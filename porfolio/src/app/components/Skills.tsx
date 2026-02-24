@@ -14,20 +14,20 @@ const skills: Skill[] = [
   { name: 'JAVA', level: 75, category: 'LANGUAGES' },
   { name: 'JAVASCRIPT', level: 80, category: 'LANGUAGES' },
   { name: 'SQL', level: 85, category: 'LANGUAGES' },
-  
+
   // Web Development
   { name: 'DJANGO', level: 90, category: 'WEB DEV' },
   { name: 'DRF', level: 85, category: 'WEB DEV' },
   { name: 'FASTAPI', level: 80, category: 'WEB DEV' },
   { name: 'HTML/CSS', level: 85, category: 'WEB DEV' },
-  
+
   // AI & ML
   { name: 'TENSORFLOW', level: 80, category: 'AI & ML' },
   { name: 'KERAS', level: 80, category: 'AI & ML' },
   { name: 'OPENCV', level: 75, category: 'AI & ML' },
   { name: 'SCIKIT', level: 75, category: 'AI & ML' },
   { name: 'NLP', level: 70, category: 'AI & ML' },
-  
+
   // Automation
   { name: 'N8N', level: 90, category: 'TOOLS' },
   { name: 'API', level: 85, category: 'TOOLS' },
@@ -68,7 +68,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-20 px-6 relative" style={{ backgroundColor: '#0D0221' }}>
       {/* Pixel Background Pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `
@@ -88,7 +88,7 @@ export function Skills() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="mb-12 text-center">
-            <div 
+            <div
               className="inline-block px-8 py-4 mb-6"
               style={{
                 backgroundColor: '#1A0B2E',
@@ -96,9 +96,9 @@ export function Skills() {
                 boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)',
               }}
             >
-              <h2 
+              <h2
                 className="text-3xl md:text-4xl retro-text-shadow"
-                style={{ 
+                style={{
                   fontFamily: 'Press Start 2P, monospace',
                   color: '#FFD700',
                   lineHeight: '1.6',
@@ -110,7 +110,7 @@ export function Skills() {
             <p
               style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '24px',
+                fontSize: '28px',
                 color: '#A8A8C0',
               }}
             >
@@ -126,7 +126,7 @@ export function Skills() {
                 variants={itemVariants}
                 transition={{ delay: categoryIndex * 0.1 }}
               >
-                <div 
+                <div
                   className="p-6 h-full"
                   style={{
                     backgroundColor: '#1A0B2E',
@@ -142,12 +142,12 @@ export function Skills() {
                         boxShadow: `0 0 10px ${categoryColors[category]}`,
                       }}
                     />
-                    <h3 
+                    <h3
                       className="text-base md:text-lg"
-                      style={{ 
+                      style={{
                         fontFamily: 'Press Start 2P, monospace',
                         color: categoryColors[category],
-                        fontSize: '12px',
+                        fontSize: '25px',
                       }}
                     >
                       {category}
@@ -160,32 +160,32 @@ export function Skills() {
                       .map((skill, index) => (
                         <div key={index}>
                           <div className="flex justify-between mb-2">
-                            <span 
+                            <span
                               className="text-sm"
-                              style={{ 
+                              style={{
                                 fontFamily: 'VT323, monospace',
-                                fontSize: '20px',
+                                fontSize: '24px',
                                 color: '#FFFFFF',
                               }}
                             >
                               {skill.name}
                             </span>
-                            <span 
+                            <span
                               className="text-sm"
-                              style={{ 
+                              style={{
                                 fontFamily: 'Press Start 2P, monospace',
-                                fontSize: '10px',
+                                fontSize: '18px',
                                 color: categoryColors[category],
                               }}
                             >
                               {skill.level}%
                             </span>
                           </div>
-                          
+
                           {/* Pixelated Progress Bar */}
-                          <div 
-                            className="relative h-6" 
-                            style={{ 
+                          <div
+                            className="relative h-6"
+                            style={{
                               backgroundColor: '#0D0221',
                               border: `2px solid ${categoryColors[category]}`,
                             }}
@@ -198,8 +198,8 @@ export function Skills() {
                               }}
                               initial={{ width: 0 }}
                               animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                              transition={{ 
-                                duration: 1.5, 
+                              transition={{
+                                duration: 1.5,
                                 delay: categoryIndex * 0.1 + index * 0.05,
                                 ease: "easeOut"
                               }}
@@ -227,7 +227,7 @@ export function Skills() {
 
           {/* Achievement Badge */}
           <motion.div variants={itemVariants} className="mt-12">
-            <div 
+            <div
               className="p-6 text-center arcade-glow"
               style={{
                 backgroundColor: '#0D0221',
@@ -238,18 +238,18 @@ export function Skills() {
               <div className="mb-3">
                 <span style={{ fontSize: '40px' }}>🏆</span>
               </div>
-              <p 
+              <p
                 className="text-sm md:text-base"
-                style={{ 
+                style={{
                   fontFamily: 'VT323, monospace',
-                  fontSize: '22px',
+                  fontSize: '26px',
                   color: '#FFFFFF',
                 }}
               >
-                <span style={{ 
-                  color: '#FFD700', 
+                <span style={{
+                  color: '#FFD700',
                   fontFamily: 'Press Start 2P, monospace',
-                  fontSize: '12px'
+                  fontSize: '25px'
                 }}>
                   ACHIEVEMENT UNLOCKED:
                 </span>

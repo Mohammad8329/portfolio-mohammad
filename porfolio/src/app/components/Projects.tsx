@@ -95,7 +95,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 px-6 relative" style={{ backgroundColor: '#1A0B2E' }}>
       {/* Pixel Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `
@@ -115,7 +115,7 @@ export function Projects() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="mb-12 text-center">
-            <div 
+            <div
               className="inline-block px-8 py-4 mb-6"
               style={{
                 backgroundColor: '#0D0221',
@@ -123,9 +123,9 @@ export function Projects() {
                 boxShadow: '0 0 20px rgba(0, 240, 255, 0.5)',
               }}
             >
-              <h2 
+              <h2
                 className="text-3xl md:text-4xl retro-text-shadow"
-                style={{ 
+                style={{
                   fontFamily: 'Press Start 2P, monospace',
                   color: '#00F0FF',
                   lineHeight: '1.6',
@@ -137,7 +137,7 @@ export function Projects() {
             <p
               style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '24px',
+                fontSize: '28px',
                 color: '#A8A8C0',
               }}
             >
@@ -155,7 +155,7 @@ export function Projects() {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="cursor-pointer"
               >
-                <div 
+                <div
                   className="p-6 h-full flex flex-col"
                   style={{
                     backgroundColor: '#0D0221',
@@ -166,11 +166,11 @@ export function Projects() {
                   {/* Project Header with Level Stars */}
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 
+                      <h3
                         className="text-lg md:text-xl font-medium"
-                        style={{ 
+                        style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '14px',
+                          fontSize: '25px',
                           color: project.color,
                           lineHeight: '1.6',
                         }}
@@ -179,27 +179,27 @@ export function Projects() {
                       </h3>
                       <div className="flex gap-1">
                         {[...Array(project.level)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className="w-4 h-4" 
+                          <Star
+                            key={i}
+                            className="w-4 h-4"
                             fill={project.color}
                             style={{ color: project.color }}
                           />
                         ))}
                       </div>
                     </div>
-                    
-                    <div 
+
+                    <div
                       className="inline-block px-2 py-1"
-                      style={{ 
+                      style={{
                         backgroundColor: project.color,
                         color: '#0D0221',
                       }}
                     >
-                      <span 
-                        style={{ 
+                      <span
+                        style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '16px',
                         }}
                       >
                         {project.date}
@@ -208,11 +208,11 @@ export function Projects() {
                   </div>
 
                   {/* Description */}
-                  <p 
+                  <p
                     className="mb-4 leading-relaxed"
-                    style={{ 
+                    style={{
                       fontFamily: 'VT323, monospace',
-                      fontSize: '20px',
+                      fontSize: '24px',
                       color: '#FFFFFF',
                     }}
                   >
@@ -221,11 +221,11 @@ export function Projects() {
 
                   {/* Highlights */}
                   <div className="mb-4 flex-1">
-                    <p 
+                    <p
                       className="text-sm mb-2"
-                      style={{ 
+                      style={{
                         fontFamily: 'Press Start 2P, monospace',
-                        fontSize: '10px',
+                        fontSize: '14px',
                         color: project.color,
                       }}
                     >
@@ -233,12 +233,12 @@ export function Projects() {
                     </p>
                     <ul className="space-y-2">
                       {project.highlights.map((highlight, idx) => (
-                        <li 
+                        <li
                           key={idx}
                           className="flex items-start gap-2"
-                          style={{ 
+                          style={{
                             fontFamily: 'VT323, monospace',
-                            fontSize: '18px',
+                            fontSize: '22px',
                             color: '#A8A8C0',
                           }}
                         >
@@ -250,9 +250,9 @@ export function Projects() {
                   </div>
 
                   {/* Technologies */}
-                  <div 
+                  <div
                     className="flex flex-wrap gap-2 mt-auto pt-4"
-                    style={{ 
+                    style={{
                       borderTop: `2px solid ${project.color}`,
                     }}
                   >
@@ -262,7 +262,7 @@ export function Projects() {
                         className="px-3 py-1"
                         style={{
                           fontFamily: 'Press Start 2P, monospace',
-                          fontSize: '8px',
+                          fontSize: '16px',
                           backgroundColor: '#1A0B2E',
                           color: project.color,
                           border: `2px solid ${project.color}`,
@@ -279,30 +279,30 @@ export function Projects() {
 
           {/* CTA */}
           <motion.div variants={itemVariants} className="mt-12 text-center">
-            <p 
+            <p
               className="text-lg mb-6"
-              style={{ 
+              style={{
                 fontFamily: 'VT323, monospace',
-                fontSize: '24px',
+                fontSize: '28px',
                 color: '#A8A8C0',
               }}
             >
               MORE QUESTS AVAILABLE ON GITHUB
             </p>
             <motion.a
-              href="https://github.com"
+              href={import.meta.env.VITE_GITHUB_URL || "https://github.com/Mohammad8329/portfolio-mohammad"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 font-medium"
               style={{
                 fontFamily: 'Press Start 2P, monospace',
-                fontSize: '12px',
+                fontSize: '16px',
                 border: '4px solid #FFD700',
                 color: '#FFD700',
                 backgroundColor: '#0D0221',
                 boxShadow: '6px 6px 0px #FF006E',
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 boxShadow: '8px 8px 0px #FF006E',
               }}
