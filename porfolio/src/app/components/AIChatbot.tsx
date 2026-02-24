@@ -102,7 +102,7 @@ export function AIChatbot() {
             }}
           >
             {/* Header */}
-            <div 
+            <div
               className="p-4 border-b flex items-center gap-3"
               style={{
                 backgroundColor: '#0D0221',
@@ -110,9 +110,9 @@ export function AIChatbot() {
                 borderWidth: '4px',
               }}
             >
-              <div 
+              <div
                 className="w-10 h-10 flex items-center justify-center"
-                style={{ 
+                style={{
                   backgroundColor: '#FF006E',
                   border: '2px solid #FFD700',
                 }}
@@ -120,8 +120,8 @@ export function AIChatbot() {
                 <Bot className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <h3 
-                  style={{ 
+                <h3
+                  style={{
                     fontFamily: 'Press Start 2P, monospace',
                     fontSize: '10px',
                     color: '#FFD700',
@@ -129,9 +129,9 @@ export function AIChatbot() {
                 >
                   AI HELPER
                 </h3>
-                <p 
+                <p
                   className="text-xs"
-                  style={{ 
+                  style={{
                     fontFamily: 'VT323, monospace',
                     fontSize: '16px',
                     color: '#A8A8C0',
@@ -149,7 +149,7 @@ export function AIChatbot() {
             </div>
 
             {/* Messages */}
-            <div 
+            <div
               className="flex-1 overflow-y-auto p-4 space-y-4"
               style={{
                 backgroundColor: '#0D0221',
@@ -167,9 +167,9 @@ export function AIChatbot() {
                   >
                     <Sparkles className="w-8 h-8" style={{ color: '#FFFFFF' }} />
                   </div>
-                  <p 
+                  <p
                     className="text-center mb-6 px-4"
-                    style={{ 
+                    style={{
                       fontFamily: 'VT323, monospace',
                       fontSize: '20px',
                       color: '#FFFFFF',
@@ -178,11 +178,11 @@ export function AIChatbot() {
                   >
                     HI! I'M MOHAMMAD'S AI ASSISTANT. ASK ME ANYTHING!
                   </p>
-                  
+
                   <div className="space-y-2 w-full px-2">
-                    <p 
+                    <p
                       className="text-xs text-center mb-3"
-                      style={{ 
+                      style={{
                         fontFamily: 'Press Start 2P, monospace',
                         fontSize: '8px',
                         color: '#FFD700',
@@ -223,19 +223,21 @@ export function AIChatbot() {
                         style={{
                           fontFamily: 'VT323, monospace',
                           fontSize: '18px',
-                          backgroundColor: msg.role === 'user' 
-                            ? '#FFD700' 
+                          backgroundColor: msg.role === 'user'
+                            ? '#FFD700'
                             : '#1A0B2E',
                           color: msg.role === 'user' ? '#0D0221' : '#FFFFFF',
-                          border: msg.role === 'user' 
-                            ? '2px solid #FF006E' 
+                          border: msg.role === 'user'
+                            ? '2px solid #FF006E'
                             : '2px solid #00F0FF',
                         }}
                       >
-                        {msg.isTyping ? (
+                        {msg.role === 'user' ? (
+                          msg.content
+                        ) : msg.isTyping ? (
                           <TypewriterText text={msg.content} />
                         ) : (
-                          msg.content
+                          <MarkdownMessage text={msg.content} />
                         )}
                       </div>
                     </motion.div>
@@ -246,7 +248,7 @@ export function AIChatbot() {
                       animate={{ opacity: 1 }}
                       className="flex justify-start"
                     >
-                      <div 
+                      <div
                         className="p-3"
                         style={{
                           backgroundColor: '#1A0B2E',
@@ -277,10 +279,10 @@ export function AIChatbot() {
             </div>
 
             {/* Input */}
-            <form 
+            <form
               onSubmit={handleSubmit}
               className="p-4"
-              style={{ 
+              style={{
                 backgroundColor: '#0D0221',
                 borderTop: '4px solid #FF006E',
               }}
@@ -306,12 +308,12 @@ export function AIChatbot() {
                   type="submit"
                   disabled={isLoading || !inputValue.trim()}
                   className="px-4 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ 
+                  style={{
                     backgroundColor: '#FFD700',
                     border: '3px solid #FF006E',
                     boxShadow: '4px 4px 0px #FF006E',
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     boxShadow: '6px 6px 0px #FF006E',
                   }}
@@ -328,6 +330,108 @@ export function AIChatbot() {
   );
 }
 
+// Lightweight markdown renderer — no external library needed
+function MarkdownMessage({ text }: { text: string }) {
+  const lines = text.split('\n');
+
+  const renderInline = (line: string, key: number) => {
+    // Split by bold (**...**), italic (*...*), and inline code (`...`)
+    const parts = line.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/);
+    return (
+      <span key={key}>
+        {parts.map((part, i) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return (
+              <strong key={i} style={{ color: '#00F0FF', fontWeight: 'bold' }}>
+                {part.slice(2, -2)}
+              </strong>
+            );
+          } else if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+            return (
+              <em key={i} style={{ color: '#FFD700', fontStyle: 'italic' }}>
+                {part.slice(1, -1)}
+              </em>
+            );
+          } else if (part.startsWith('`') && part.endsWith('`')) {
+            return (
+              <code
+                key={i}
+                style={{
+                  backgroundColor: '#0D0221',
+                  color: '#FF006E',
+                  padding: '0 4px',
+                  border: '1px solid #FF006E',
+                  fontFamily: 'VT323, monospace',
+                  fontSize: '16px',
+                }}
+              >
+                {part.slice(1, -1)}
+              </code>
+            );
+          }
+          return <span key={i}>{part}</span>;
+        })}
+      </span>
+    );
+  };
+
+  return (
+    <div style={{ lineHeight: '1.5' }}>
+      {lines.map((line, index) => {
+        const trimmed = line.trim();
+
+        // Bullet list item
+        if (/^[-•*]\s/.test(trimmed)) {
+          return (
+            <div key={index} style={{ display: 'flex', gap: '6px', marginBottom: '2px' }}>
+              <span style={{ color: '#00F0FF', flexShrink: 0 }}>▸</span>
+              <span>{renderInline(trimmed.slice(2), index)}</span>
+            </div>
+          );
+        }
+
+        // Numbered list item
+        if (/^\d+\.\s/.test(trimmed)) {
+          const match = trimmed.match(/^(\d+\.\s)(.*)/)!;
+          return (
+            <div key={index} style={{ display: 'flex', gap: '6px', marginBottom: '2px' }}>
+              <span style={{ color: '#FFD700', flexShrink: 0 }}>{match[1]}</span>
+              <span>{renderInline(match[2], index)}</span>
+            </div>
+          );
+        }
+
+        // Heading (## or #)
+        if (/^#{1,3}\s/.test(trimmed)) {
+          const headingText = trimmed.replace(/^#{1,3}\s/, '');
+          return (
+            <div
+              key={index}
+              style={{
+                color: '#FFD700',
+                fontWeight: 'bold',
+                marginTop: '6px',
+                marginBottom: '2px',
+                fontSize: '20px',
+              }}
+            >
+              {headingText}
+            </div>
+          );
+        }
+
+        // Empty line = spacing
+        if (trimmed === '') {
+          return <div key={index} style={{ height: '6px' }} />;
+        }
+
+        // Regular paragraph line
+        return <div key={index}>{renderInline(line, index)}</div>;
+      })}
+    </div>
+  );
+}
+
 // Typewriter effect component
 function TypewriterText({ text }: { text: string }) {
   const [displayedText, setDisplayedText] = useState('');
@@ -338,10 +442,14 @@ function TypewriterText({ text }: { text: string }) {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
-      }, 20);
+      }, 15);
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, text]);
 
-  return <span>{displayedText}</span>;
+  // Show plain text while typing, full markdown once done
+  const isDone = currentIndex >= text.length;
+  return isDone
+    ? <MarkdownMessage text={text} />
+    : <span>{displayedText}</span>;
 }

@@ -32,10 +32,11 @@ async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db)):
     db.add(user_msg)
     db.commit()
 
-    # Fetch history
+    # Fetch last 10 messages (most recent), then reverse to chronological order
     history = db.query(ChatMessage).filter(
         ChatMessage.session_id == session_id
-    ).order_by(ChatMessage.timestamp).limit(10).all()
+    ).order_by(ChatMessage.timestamp.desc()).limit(10).all()
+    history = list(reversed(history))
 
     # Build messages array
     messages = [{"role": "system", "content": RESUME_PROMPT}]
